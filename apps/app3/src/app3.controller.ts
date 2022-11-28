@@ -1,5 +1,6 @@
-import { Controller, Get, Post } from '@nestjs/common'
+import { Body, Controller, Get, Post } from '@nestjs/common'
 import { App3Service } from './app3.service'
+import { DataDto } from './data.dto'
 
 @Controller()
 export class App3Controller {
@@ -11,7 +12,7 @@ export class App3Controller {
   }
 
   @Post()
-  message() {
-    this.app3Service.message()
+  message(@Body() data: DataDto) {
+    this.app3Service.message(data)
   }
 }

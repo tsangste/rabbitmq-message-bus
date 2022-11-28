@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common'
 
 import { AmqpConnection } from '@golevelup/nestjs-rabbitmq'
+import { DataDto } from './data.dto'
 
 @Injectable()
 export class App3Service {
@@ -10,7 +11,7 @@ export class App3Service {
     return 'Hello World!'
   }
 
-  message() {
-    this.amqpConnection.publish('app3', 'app3-route', { msg: 'hello-app3' })
+  message(data: DataDto) {
+    this.amqpConnection.publish('app3', `app3.${data.event}`, { msg: 'hello-app3' })
   }
 }

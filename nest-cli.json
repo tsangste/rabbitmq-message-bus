@@ -35,6 +35,15 @@
       "compilerOptions": {
         "tsConfigPath": "apps/app3/tsconfig.app.json"
       }
+    },
+    "app4": {
+      "type": "application",
+      "root": "apps/app4",
+      "entryFile": "main",
+      "sourceRoot": "apps/app4/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/app4/tsconfig.app.json"
+      }
     }
   }
 }
