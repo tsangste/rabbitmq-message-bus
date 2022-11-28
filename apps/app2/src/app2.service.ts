@@ -12,6 +12,7 @@ export class App2Service {
   }
 
   message(data: DataDto) {
+    console.log(`send - app2.${data.event}`)
     this.amqpConnection.publish('app2', `app2.${data.event}`, { msg: 'hello-app2' })
   }
 }

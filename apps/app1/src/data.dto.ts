@@ -1,3 +1,3 @@
 export class DataDto {
-  event?: string
+  event: string
 }

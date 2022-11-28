@@ -24,6 +24,8 @@ services:
     volumes:
       - .:/usr/app
       - /usr/app/node_modules
+    ports:
+      - "3001:3000"
 
   app3:
     build:
