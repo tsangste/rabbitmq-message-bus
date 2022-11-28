@@ -14,7 +14,7 @@ import { App3Service } from './app3.service'
           type: 'topic',
         },
       ],
-      uri: 'amqp://localhost:5672',
+      uri: 'amqp://rabbitmq:5672',
       connectionInitOptions: { wait: false },
     }),
   ],

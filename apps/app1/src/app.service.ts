@@ -15,8 +15,8 @@ export class AppService {
   async sendMessage() {
     await lastValueFrom(
       forkJoin([
-        this.httpService.post('http://localhost:3001/', { event: 'app1.route' }).pipe(map(response => response.data)),
-        this.httpService.post('http://localhost:3002/', { event: 'app1.route' }).pipe(map(response => response.data)),
+        this.httpService.post('http://app2:3000/', { event: 'app1.route' }).pipe(map(response => response.data)),
+        this.httpService.post('http://app3:3000/', { event: 'app1.route' }).pipe(map(response => response.data)),
       ])
     )
   }

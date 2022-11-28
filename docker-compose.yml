@@ -1,0 +1,58 @@
+version: '3.4'
+
+services:
+  app1:
+    build:
+      context: .
+      target: command
+    command: run start:app1:debug
+    depends_on:
+      - rabbitmq
+    volumes:
+      - .:/usr/app
+      - /usr/app/node_modules
+    ports:
+      - "3000:3000"
+
+  app2:
+    build:
+      context: .
+      target: command
+    command: run start:app2:debug
+    depends_on:
+      - rabbitmq
+    volumes:
+      - .:/usr/app
+      - /usr/app/node_modules
+
+  app3:
+    build:
+      context: .
+      target: command
+    command: run start:app3:debug
+    depends_on:
+      - rabbitmq
+    volumes:
+      - .:/usr/app
+      - /usr/app/node_modules
+
+  app4:
+    build:
+      context: .
+      target: command
+    command: run start:app4:debug
+    depends_on:
+      - rabbitmq
+    deploy:
+       mode: replicated
+       replicas: 3
+    volumes:
+      - .:/usr/app
+      - /usr/app/node_modules
+
+  rabbitmq:
+    image: rabbitmq:3.9.10-management
+    restart: always
+    ports:
+      - "15672:15672"
+
