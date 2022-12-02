@@ -37,6 +37,8 @@ services:
     volumes:
       - .:/usr/app
       - /usr/app/node_modules
+    ports:
+      - "3002:3000"
 
   app4:
     build:

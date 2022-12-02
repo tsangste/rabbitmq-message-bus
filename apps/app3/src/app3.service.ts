@@ -21,7 +21,7 @@ export class App3Service {
     routingKey: 'app2.app3.task',
     queue: 'app2-app3-task',
   })
-  public async app2WildHandler(msg: unknown) {
-    console.log(`Received wild message: ${JSON.stringify(msg)}`)
+  public async app2TaskHandler(msg: unknown) {
+    console.log(`Received task message: ${JSON.stringify(msg)}`)
   }
 }
